@@ -1,0 +1,9 @@
+.*
+!.gitignore
+Makefile*
+!Makefile.PL
+*blib
+META.yml
+inc/
+MANIFEST
+*.bak
