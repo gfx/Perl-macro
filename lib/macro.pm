@@ -6,8 +6,8 @@ use strict;
 use warnings;
 use warnings::register;
 
-our $VERSION = '0.04';
-use constant DEBUG => $ENV{PERL_MACRO_DEBUG} || 0;
+our $VERSION = '0.05';
+use constant DEBUG => $ENV{PERL_MACRO_DEBUG} ? 1 : 0;
 
 use Scalar::Util (); # tainted()
 use Carp ();
@@ -396,7 +396,7 @@ macro - An implementation of macro processor
 
 =head1 VERSION
 
-This document describes macro version 0.04
+This document describes macro version 0.05
 
 =head1 SYNOPSIS
 
@@ -418,7 +418,7 @@ This document describes macro version 0.04
 
 =head1 DESCRIPTION
 
-The C<macro> pragma provides a sort of inline functions, 
+The C<macro> pragma provides macros, a sort of inline functions,
 which is like C pre-processor's macro.
 
 The macros are very fast (about 200% faster than subroutines), but they have
@@ -442,7 +442,7 @@ build time.
 
 See L<Module::Compile> and L<Module::Install::PMC> for details.
 
-=head1 METHOD
+=head1 METHODS
 
 =head2 macro->backend()
 
@@ -466,7 +466,7 @@ Processes Perl source code I<$source>, and returns processed source code.
 
 =head2 PERL_MACRO_DEBUG=value
 
-Debug mode.
+Sets the debug mode.
 
 if it's == 0, C<macro::compiler> is used as the backend.
 
@@ -521,11 +521,11 @@ L<Module::Compile>.
 
 =head1 AUTHOR
 
-Goro Fuji E<lt>gfuji(at)cpan.orgE<gt>
+Goro Fuji E<lt>gfuji(at)cpan.orgE<gt>.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2008, Goro Fuji E<lt>gfuji(at)cpan.orgE<gt>. Some rights reserved.
+Copyright (c) 2008-2009, Goro Fuji E<lt>gfuji(at)cpan.orgE<gt>. Some rights reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.

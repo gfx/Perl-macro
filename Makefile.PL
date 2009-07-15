@@ -14,6 +14,8 @@ requires 'Filter::Util::Call'   => 1.06;
 
 test_requires 'Test::Warn' => 0.11;
 
+author_tests 'xt';
+
 auto_set_repository;
 
 WriteMakefile(
